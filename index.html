@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Hike Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #1a1a1a;
+      color: #f0f0f0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #2d5a27;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #c8e6c9;
+      white-space: nowrap;
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    select, button.filter-btn {
+      background: #1e3d1b;
+      color: #c8e6c9;
+      border: 1px solid #4a7c44;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    select:focus { outline: none; border-color: #81c784; }
+
+    button.filter-btn {
+      transition: background 0.2s;
+    }
+    button.filter-btn:hover { background: #2d5a27; }
+    button.filter-btn.active { background: #4a7c44; }
+
+    .stats {
+      font-size: 0.8rem;
+      color: #a5d6a7;
+      white-space: nowrap;
+    }
+
+    .main {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    #map {
+      flex: 1;
+      z-index: 1;
+    }
+
+    #sidebar {
+      width: 340px;
+      background: #242424;
+      overflow-y: auto;
+      border-left: 1px solid #333;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #sidebar-header {
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid #333;
+      font-size: 0.9rem;
+      color: #aaa;
+      position: sticky;
+      top: 0;
+      background: #242424;
+      z-index: 10;
+    }
+
+    #hike-list {
+      flex: 1;
+    }
+
+    .hike-card {
+      padding: 14px 16px;
+      border-bottom: 1px solid #2e2e2e;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .hike-card:hover { background: #2c2c2c; }
+    .hike-card.active { background: #1e3d1b; border-left: 3px solid #66bb6a; }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .hike-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      flex: 1;
+      line-height: 1.3;
+    }
+
+    .badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 12px;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-easy { background: #1b5e20; color: #a5d6a7; }
+    .badge-moderate { background: #e65100; color: #ffe0b2; }
+    .badge-hard { background: #7f0000; color: #ef9a9a; }
+    .badge-np { background: #1a237e; color: #c5cae9; }
+
+    .card-meta {
+      font-size: 0.78rem;
+      color: #888;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .card-meta span { display: flex; align-items: center; gap: 3px; }
+
+    .completed-check {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #555;
+      flex-shrink: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      transition: all 0.2s;
+    }
+    .completed-check.done { background: #66bb6a; border-color: #66bb6a; }
+    .completed-check.done::after { content: '✓'; font-size: 11px; color: #fff; font-weight: bold; }
+
+    /* Detail panel */
+    #detail-panel {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      width: 340px;
+      background: #1e1e1e;
+      border: 1px solid #3a3a3a;
+      border-radius: 12px;
+      padding: 18px;
+      z-index: 500;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+      display: none;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    #detail-panel.visible { display: block; }
+
+    #detail-close {
+      float: right;
+      background: none;
+      border: none;
+      color: #aaa;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: -4px;
+    }
+    #detail-close:hover { color: #fff; }
+
+    .detail-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      padding-right: 24px;
+    }
+
+    .detail-state {
+      font-size: 0.82rem;
+      color: #888;
+      margin-bottom: 12px;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .detail-item {
+      background: #2a2a2a;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .detail-item .label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #666;
+      margin-bottom: 3px;
+    }
+
+    .detail-item .value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #e0e0e0;
+    }
+
+    .detail-section {
+      margin-bottom: 12px;
+    }
+
+    .detail-section .label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #666;
+      margin-bottom: 4px;
+    }
+
+    .detail-section .value {
+      font-size: 0.88rem;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    .seasons-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .season-tag {
+      background: #2d5a27;
+      color: #a5d6a7;
+      font-size: 0.75rem;
+      padding: 2px 9px;
+      border-radius: 12px;
+    }
+
+    .mark-done-btn {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 4px;
+      transition: all 0.2s;
+    }
+    .mark-done-btn.not-done {
+      background: #2d5a27;
+      color: #c8e6c9;
+    }
+    .mark-done-btn.not-done:hover { background: #4a7c44; }
+    .mark-done-btn.is-done {
+      background: #333;
+      color: #66bb6a;
+    }
+
+    /* Leaflet popup override */
+    .leaflet-popup-content-wrapper {
+      background: #1e1e1e;
+      color: #f0f0f0;
+      border: 1px solid #333;
+      border-radius: 10px;
+    }
+    .leaflet-popup-tip { background: #1e1e1e; }
+    .leaflet-popup-content { margin: 12px 16px; font-size: 0.85rem; }
+
+    @media (max-width: 700px) {
+      #sidebar { display: none; }
+      #detail-panel { left: 10px; right: 10px; width: auto; bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🥾 My Hike Map</h1>
+  <div class="filters">
+    <select id="filter-type">
+      <option value="all">All types</option>
+      <option value="national_park">National Parks</option>
+      <option value="day_hike">Day Hikes</option>
+    </select>
+    <select id="filter-difficulty">
+      <option value="all">All difficulties</option>
+      <option value="easy">Easy</option>
+      <option value="moderate">Moderate</option>
+      <option value="hard">Hard</option>
+    </select>
+    <select id="filter-drive">
+      <option value="all">Any drive time</option>
+      <option value="2">Under 2 hrs</option>
+      <option value="3">Under 3 hrs</option>
+      <option value="5">Under 5 hrs</option>
+    </select>
+    <button class="filter-btn" id="filter-completed">Show completed</button>
+  </div>
+  <div class="stats" id="stats"></div>
+</header>
+
+<div class="main">
+  <div id="map"></div>
+  <div id="sidebar">
+    <div id="sidebar-header">
+      <span id="list-count"></span> hikes
+    </div>
+    <div id="hike-list"></div>
+  </div>
+</div>
+
+<div id="detail-panel">
+  <button id="detail-close">✕</button>
+  <div class="detail-title" id="dp-name"></div>
+  <div class="detail-state" id="dp-state"></div>
+  <div class="detail-grid">
+    <div class="detail-item">
+      <div class="label">Difficulty</div>
+      <div class="value" id="dp-difficulty"></div>
+    </div>
+    <div class="detail-item">
+      <div class="label">Drive from NYC</div>
+      <div class="value" id="dp-drive"></div>
+    </div>
+    <div class="detail-item">
+      <div class="label">Trail Length</div>
+      <div class="value" id="dp-miles"></div>
+    </div>
+    <div class="detail-item">
+      <div class="label">Elevation Gain</div>
+      <div class="value" id="dp-elevation"></div>
+    </div>
+    <div class="detail-item">
+      <div class="label">Distance</div>
+      <div class="value" id="dp-distance"></div>
+    </div>
+    <div class="detail-item">
+      <div class="label">Est. Cost</div>
+      <div class="value" id="dp-cost"></div>
+    </div>
+  </div>
+  <div class="detail-section">
+    <div class="label">Cost Notes</div>
+    <div class="value" id="dp-cost-notes"></div>
+  </div>
+  <div class="detail-section">
+    <div class="label">Best Seasons</div>
+    <div class="seasons-list" id="dp-seasons"></div>
+  </div>
+  <div class="detail-section">
+    <div class="label">Highlights</div>
+    <div class="value" id="dp-highlights"></div>
+  </div>
+  <div class="detail-section" id="dp-notes-section" style="display:none">
+    <div class="label">Notes</div>
+    <div class="value" id="dp-notes"></div>
+  </div>
+  <button class="mark-done-btn" id="dp-done-btn"></button>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  let hikes = [];
+  let markers = {};
+  let activeId = null;
+  let showCompleted = false;
+
+  const map = L.map('map', { zoomControl: true }).setView([41.8, -73.5], 7);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap contributors © CARTO',
+    maxZoom: 18
+  }).addTo(map);
+
+  function difficultyColor(d) {
+    return d === 'easy' ? '#66bb6a' : d === 'moderate' ? '#ffa726' : '#ef5350';
+  }
+
+  function makeMarker(hike) {
+    const color = hike.completed ? '#9e9e9e' : difficultyColor(hike.difficulty);
+    const isNP = hike.type === 'national_park';
+
+    const icon = L.divIcon({
+      className: '',
+      html: `<div style="
+        width:${isNP ? 18 : 14}px;
+        height:${isNP ? 18 : 14}px;
+        border-radius:50%;
+        background:${color};
+        border:3px solid ${hike.completed ? '#555' : '#fff'};
+        box-shadow:0 2px 6px rgba(0,0,0,0.5);
+        opacity:${hike.completed ? 0.55 : 1};
+      "></div>`,
+      iconSize: [isNP ? 18 : 14, isNP ? 18 : 14],
+      iconAnchor: [isNP ? 9 : 7, isNP ? 9 : 7]
+    });
+
+    const m = L.marker([hike.lat, hike.lng], { icon });
+    m.bindPopup(`<strong>${hike.name}</strong><br>${hike.state}<br><em>${hike.difficulty}</em>`);
+    m.on('click', () => showDetail(hike.id));
+    return m;
+  }
+
+  function renderMarkers(filtered) {
+    Object.values(markers).forEach(m => map.removeLayer(m));
+    markers = {};
+    filtered.forEach(hike => {
+      markers[hike.id] = makeMarker(hike).addTo(map);
+    });
+  }
+
+  function getFiltered() {
+    const type = document.getElementById('filter-type').value;
+    const diff = document.getElementById('filter-difficulty').value;
+    const drive = document.getElementById('filter-drive').value;
+
+    return hikes.filter(h => {
+      if (!showCompleted && h.completed) return false;
+      if (type !== 'all' && h.type !== type) return false;
+      if (diff !== 'all' && h.difficulty !== diff) return false;
+      if (drive !== 'all' && h.drive_hours > parseFloat(drive)) return false;
+      return true;
+    });
+  }
+
+  function renderList(filtered) {
+    const list = document.getElementById('hike-list');
+    list.innerHTML = '';
+    document.getElementById('list-count').textContent = filtered.length;
+
+    filtered.forEach(hike => {
+      const card = document.createElement('div');
+      card.className = 'hike-card' + (hike.id === activeId ? ' active' : '');
+      card.dataset.id = hike.id;
+
+      const isNP = hike.type === 'national_park';
+      card.innerHTML = `
+        <div class="card-top">
+          <div class="completed-check ${hike.completed ? 'done' : ''}" data-id="${hike.id}" title="Mark complete"></div>
+          <div class="hike-name">${hike.name}</div>
+          ${isNP ? '<span class="badge badge-np">NP</span>' : ''}
+          <span class="badge badge-${hike.difficulty}">${hike.difficulty}</span>
+        </div>
+        <div class="card-meta">
+          <span>🚗 ${hike.drive_hours}h</span>
+          <span>📏 ${hike.trail_miles} mi</span>
+          <span>💰 ${hike.estimated_cost}</span>
+        </div>
+      `;
+
+      card.addEventListener('click', (e) => {
+        if (e.target.classList.contains('completed-check')) return;
+        showDetail(hike.id);
+        if (markers[hike.id]) {
+          map.setView([hike.lat, hike.lng], 10, { animate: true });
+          markers[hike.id].openPopup();
+        }
+      });
+
+      card.querySelector('.completed-check').addEventListener('click', () => toggleComplete(hike.id));
+      list.appendChild(card);
+    });
+  }
+
+  function updateStats() {
+    const done = hikes.filter(h => h.completed).length;
+    document.getElementById('stats').textContent = `${done} / ${hikes.length} completed`;
+  }
+
+  function refresh() {
+    const filtered = getFiltered();
+    renderMarkers(filtered);
+    renderList(filtered);
+    updateStats();
+  }
+
+  function showDetail(id) {
+    const hike = hikes.find(h => h.id === id);
+    if (!hike) return;
+    activeId = id;
+
+    document.getElementById('dp-name').textContent = hike.name;
+    document.getElementById('dp-state').textContent = hike.state + (hike.type === 'national_park' ? ' · National Park' : '');
+    document.getElementById('dp-difficulty').textContent = hike.difficulty.charAt(0).toUpperCase() + hike.difficulty.slice(1);
+    document.getElementById('dp-drive').textContent = hike.drive_hours + ' hrs';
+    document.getElementById('dp-miles').textContent = hike.trail_miles + ' mi';
+    document.getElementById('dp-elevation').textContent = hike.elevation_gain_ft.toLocaleString() + ' ft';
+    document.getElementById('dp-distance').textContent = hike.distance_from_nyc_miles + ' mi from NYC';
+    document.getElementById('dp-cost').textContent = hike.estimated_cost;
+    document.getElementById('dp-cost-notes').textContent = hike.cost_notes;
+    document.getElementById('dp-highlights').textContent = hike.highlights;
+
+    const seasons = document.getElementById('dp-seasons');
+    seasons.innerHTML = hike.best_seasons.map(s => `<span class="season-tag">${s}</span>`).join('');
+
+    const notesSection = document.getElementById('dp-notes-section');
+    if (hike.notes) {
+      notesSection.style.display = 'block';
+      document.getElementById('dp-notes').textContent = hike.notes;
+    } else {
+      notesSection.style.display = 'none';
+    }
+
+    const btn = document.getElementById('dp-done-btn');
+    btn.textContent = hike.completed ? '✓ Completed!' : 'Mark as Completed';
+    btn.className = 'mark-done-btn ' + (hike.completed ? 'is-done' : 'not-done');
+    btn.onclick = () => toggleComplete(id);
+
+    document.getElementById('detail-panel').classList.add('visible');
+
+    document.querySelectorAll('.hike-card').forEach(c => {
+      c.classList.toggle('active', parseInt(c.dataset.id) === id);
+    });
+  }
+
+  function toggleComplete(id) {
+    const hike = hikes.find(h => h.id === id);
+    if (!hike) return;
+    hike.completed = !hike.completed;
+    refresh();
+    if (activeId === id) showDetail(id);
+  }
+
+  document.getElementById('detail-close').addEventListener('click', () => {
+    document.getElementById('detail-panel').classList.remove('visible');
+    activeId = null;
+    document.querySelectorAll('.hike-card').forEach(c => c.classList.remove('active'));
+  });
+
+  document.getElementById('filter-completed').addEventListener('click', function () {
+    showCompleted = !showCompleted;
+    this.classList.toggle('active', showCompleted);
+    this.textContent = showCompleted ? 'Hide completed' : 'Show completed';
+    refresh();
+  });
+
+  ['filter-type', 'filter-difficulty', 'filter-drive'].forEach(id => {
+    document.getElementById(id).addEventListener('change', refresh);
+  });
+
+  fetch('hikes.json')
+    .then(r => r.json())
+    .then(data => {
+      hikes = data;
+      refresh();
+    })
+    .catch(() => {
+      document.getElementById('sidebar-header').textContent = 'Could not load hikes.json';
+    });
+</script>
+</body>
+</html>
