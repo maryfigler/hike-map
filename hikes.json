@@ -6,17 +6,71 @@
     "state": "Maine",
     "lat": 44.3386,
     "lng": -68.2733,
-    "difficulty": "moderate",
-    "best_seasons": ["June", "July", "August", "September", "October"],
+    "difficulty_range": "Easy to Hard",
+    "best_seasons": ["June", "September", "October"],
+    "best_season_notes": "June for wildflowers and light crowds. September and October for peak foliage and cooler temps. Summer is beautiful but crowded.",
+    "busiest_times": ["July", "August"],
+    "busiest_notes": "July and August are extremely crowded. Timed entry reservations required for Cadillac Mountain and the Park Loop Road during peak season (typically May–October).",
+    "annual_closures": "Cadillac Mountain Summit Road closes November through mid-April due to snow. Some carriage roads may close in mud season (March–April).",
     "distance_from_nyc_miles": 330,
     "drive_hours": 5.5,
-    "trail_miles": 45,
-    "elevation_gain_ft": 1530,
-    "estimated_cost": "$120-200",
-    "cost_notes": "$35 park entrance fee, camping $30/night or lodging $100-200/night",
-    "highlights": "Cadillac Mountain, carriage roads, rocky coastline, tide pools",
+    "nearest_airport": "Bangor International Airport (BGR), 50 miles — or fly into Portland (PWM, 160 miles). Within 5.5hr drive from NYC.",
+    "estimated_cost": "$120–$250+",
+    "cost_breakdown": {
+      "Park Entrance": "$35/vehicle (7-day pass) — covers all entry points",
+      "Camping": "$30–$55/night at Blackwoods or Seawall Campgrounds (reserve early — books out months ahead)",
+      "Lodging": "$150–$350/night in Bar Harbor (prices spike July–Aug)",
+      "Food & Dining": "$40–$80/day — Bar Harbor has many restaurants; bring groceries to save",
+      "Gas from NYC": "~$65–$90 round trip (depending on vehicle)",
+      "Timed Entry Reservation": "Free but required online for Cadillac Mountain road in peak season"
+    },
+    "highlights": "Cadillac Mountain (first sunrise in the US Oct–Mar), carriage roads, rocky Atlantic coastline, tide pools, Bar Harbor village",
     "completed": false,
-    "notes": ""
+    "notes": "",
+    "trails": [
+      {
+        "name": "Jordan Pond Path",
+        "miles": 3.3,
+        "elevation_gain_ft": 150,
+        "difficulty": "easy",
+        "description": "Flat loop around a stunning glacial pond with views of The Bubbles peaks. Paved in sections. Ends near the famous Jordan Pond House popovers. Great for all fitness levels."
+      },
+      {
+        "name": "Ocean Path",
+        "miles": 4.4,
+        "elevation_gain_ft": 50,
+        "difficulty": "easy",
+        "description": "Flat paved path along the rocky Atlantic coastline. Passes Thunder Hole and Otter Cliffs. Excellent for families and casual walkers."
+      },
+      {
+        "name": "Cadillac Mountain South Ridge Trail",
+        "miles": 7.0,
+        "elevation_gain_ft": 1530,
+        "difficulty": "moderate",
+        "description": "The most rewarding hike in Acadia. Open granite ridgeline with panoramic 360° views. Highest point on the US East Coast north of Brazil. Can be combined with the road for a one-way hike."
+      },
+      {
+        "name": "Beehive Trail",
+        "miles": 1.6,
+        "elevation_gain_ft": 450,
+        "difficulty": "hard",
+        "description": "Short but intense — iron rungs bolted into near-vertical cliff faces. Not for those with a fear of heights. Thrilling exposed scramble with great ocean views. Loop back via Bowl Trail."
+      },
+      {
+        "name": "Precipice Trail",
+        "miles": 1.6,
+        "elevation_gain_ft": 1000,
+        "difficulty": "hard",
+        "description": "Acadia's most challenging trail. Iron rungs and ladders on exposed cliffs. Often closes April–August for peregrine falcon nesting. Incredible summit views over Frenchman Bay."
+      },
+      {
+        "name": "Flying Mountain Trail",
+        "miles": 1.5,
+        "elevation_gain_ft": 284,
+        "difficulty": "easy",
+        "description": "Short hike on the quieter Southwestern side of the island. Good harbor views with much lighter crowds than the main loop road area."
+      }
+    ]
   },
   {
     "id": 2,
@@ -25,17 +79,63 @@
     "state": "Virginia",
     "lat": 38.4755,
     "lng": -78.4535,
-    "difficulty": "moderate",
+    "difficulty_range": "Easy to Hard",
     "best_seasons": ["April", "May", "October", "November"],
+    "best_season_notes": "Mid-October for peak fall foliage along Skyline Drive. Late April–May for wildflowers and spring green. Avoid summer weekends — hot and very crowded.",
+    "busiest_times": ["October weekends", "July", "August"],
+    "busiest_notes": "Fall foliage weekends (mid-Oct) are the absolute busiest — parking lots fill by 9am. Summer weekends are also very crowded. Weekday visits strongly recommended in peak seasons.",
+    "annual_closures": "Skyline Drive closes during severe winter storms and ice events (usually 1–3 times per year, Dec–Feb). Some higher-elevation trails may be icy November–March.",
     "distance_from_nyc_miles": 310,
     "drive_hours": 5.0,
-    "trail_miles": 101,
-    "elevation_gain_ft": 2800,
-    "estimated_cost": "$90-180",
-    "cost_notes": "$35 park entrance, camping $20/night, Skyline Drive scenic route included",
-    "highlights": "Skyline Drive, Stony Man, Old Rag Mountain, fall foliage",
+    "nearest_airport": "Dulles International Airport (IAD), 75 miles — or Reagan National (DCA), 90 miles. Within 5hr drive from NYC.",
+    "estimated_cost": "$90–$200",
+    "cost_breakdown": {
+      "Park Entrance": "$35/vehicle (7-day pass)",
+      "Camping": "$20–$30/night at Mathews Arm, Big Meadows, Lewis Mountain, or Loft Mountain Campgrounds",
+      "Lodging": "$130–$220/night at Skyland or Big Meadows Lodge (on Skyline Drive — book early)",
+      "Food": "$30–$60/day — limited options inside park; stock up before entering",
+      "Gas from NYC": "~$55–$75 round trip"
+    },
+    "highlights": "Skyline Drive (105-mile scenic road), Old Rag Mountain, Dark Hollow Falls, deer and black bear sightings, wildflower season",
     "completed": false,
-    "notes": ""
+    "notes": "",
+    "trails": [
+      {
+        "name": "Dark Hollow Falls",
+        "miles": 1.4,
+        "elevation_gain_ft": 200,
+        "difficulty": "easy",
+        "description": "Short trail to one of the most beautiful waterfalls in the park. Steep descent on the way in (steep climb out). Very popular — go early."
+      },
+      {
+        "name": "Stony Man Trail",
+        "miles": 1.6,
+        "elevation_gain_ft": 340,
+        "difficulty": "easy",
+        "description": "Easy loop to the second-highest peak in the park. Excellent views from exposed cliffs with minimal effort. Good for beginners."
+      },
+      {
+        "name": "Hawksbill Summit Trail",
+        "miles": 2.9,
+        "elevation_gain_ft": 696,
+        "difficulty": "moderate",
+        "description": "Hike to the highest peak in Shenandoah. Rocky scramble near the top. 360° views from the summit shelter. Can loop back a different way."
+      },
+      {
+        "name": "Old Rag Mountain",
+        "miles": 9.0,
+        "elevation_gain_ft": 2415,
+        "difficulty": "hard",
+        "description": "The crown jewel of Shenandoah — a full-day adventure with a boulder scramble near the summit requiring hands-and-feet climbing. Timed-entry day-use pass required ($1/person, reserve in advance). One of the best hikes in the Mid-Atlantic."
+      },
+      {
+        "name": "White Oak Canyon",
+        "miles": 9.6,
+        "elevation_gain_ft": 2200,
+        "difficulty": "hard",
+        "description": "Six waterfalls along a steep canyon. Can be done as an out-and-back to the lower falls (shorter/easier) or the full loop. One of the most scenic trails in the park."
+      }
+    ]
   },
   {
     "id": 3,
@@ -44,17 +144,56 @@
     "state": "New Jersey / Pennsylvania",
     "lat": 41.0534,
     "lng": -74.9237,
-    "difficulty": "easy",
+    "difficulty_range": "Easy to Moderate",
     "best_seasons": ["April", "May", "June", "September", "October"],
+    "best_season_notes": "Spring for waterfalls at full flow and wildflowers. Fall for foliage. Summer is fine but busy at swimming holes. Avoid after heavy rain — some trails flood.",
+    "busiest_times": ["Memorial Day weekend", "Labor Day weekend", "July 4th"],
+    "busiest_notes": "Summer holiday weekends pack the swimming areas and parking lots. Weekday visits in summer are much more pleasant. Falls season brings foliage crowds on weekends.",
+    "annual_closures": "No formal seasonal closures. Some river access points may close temporarily after flooding.",
     "distance_from_nyc_miles": 70,
     "drive_hours": 1.5,
-    "trail_miles": 27,
-    "elevation_gain_ft": 1200,
-    "estimated_cost": "$20-60",
-    "cost_notes": "Free entrance, camping $20/night",
-    "highlights": "Dingmans Falls, Appalachian Trail section, swimming holes",
+    "nearest_airport": "Newark Liberty International Airport (EWR), 70 miles — or JFK/LGA. Within 1.5hr drive from NYC.",
+    "estimated_cost": "$20–$60",
+    "cost_breakdown": {
+      "Park Entrance": "Free",
+      "Camping": "$20–$30/night at Dingmans Campground or Worthington State Forest",
+      "Food": "$15–$30/day if bringing your own; local diners nearby",
+      "Gas from NYC": "~$15–$25 round trip",
+      "Parking": "Free at most trailheads; some day-use lots $5–$10"
+    },
+    "highlights": "Dingmans Falls (second-tallest waterfall in PA), Delaware River swimming holes, Appalachian Trail access, dramatic gap views",
     "completed": false,
-    "notes": ""
+    "notes": "",
+    "trails": [
+      {
+        "name": "Dingmans Falls Trail",
+        "miles": 1.2,
+        "elevation_gain_ft": 100,
+        "difficulty": "easy",
+        "description": "Flat boardwalk trail to Silverthread Falls and Dingmans Falls (130 ft tall). One of the most accessible waterfall hikes in the region. Family-friendly."
+      },
+      {
+        "name": "Appalachian Trail — Delaware Water Gap Section",
+        "miles": 4.0,
+        "elevation_gain_ft": 1200,
+        "difficulty": "moderate",
+        "description": "Hike the AT northbound from the gap up to Sunfish Pond — a stunning glacial lake on the ridge. Out-and-back. Great views of the Delaware River from the ridge."
+      },
+      {
+        "name": "Mount Tammany Red Dot Trail",
+        "miles": 3.8,
+        "elevation_gain_ft": 1200,
+        "difficulty": "moderate",
+        "description": "Steep climb up the NJ side of the gap. Scrambling on loose rock near the top. Dramatic views down into the Delaware River gorge. Loop back via Blue Dot trail."
+      },
+      {
+        "name": "Tumbling Waters Trail",
+        "miles": 3.5,
+        "elevation_gain_ft": 700,
+        "difficulty": "moderate",
+        "description": "A hidden gem on the PA side — leads to a series of cascades and a beautiful waterfall. Less crowded than Dingmans. Rocky terrain near the falls."
+      }
+    ]
   },
   {
     "id": 4,
@@ -63,17 +202,40 @@
     "state": "New York",
     "lat": 41.9998,
     "lng": -74.3860,
-    "difficulty": "moderate",
+    "difficulty_range": "Moderate",
     "best_seasons": ["May", "June", "September", "October"],
+    "best_season_notes": "September and October offer the best views (leaves off trees on the summit) and comfortable temps. Avoid spring mud season (March–April). Summer is green but summit can be hazy.",
+    "busiest_times": ["October weekends", "summer weekends"],
+    "busiest_notes": "Fall foliage weekends are the busiest — the small parking area fills by 8am. Arrive early or visit on weekdays. Generally much less crowded than Hudson Valley hikes.",
+    "annual_closures": "No formal closures, but trail can be icy November–April. Microspikes recommended in winter.",
     "distance_from_nyc_miles": 120,
     "drive_hours": 2.5,
-    "trail_miles": 5.4,
-    "elevation_gain_ft": 1600,
-    "estimated_cost": "$10-30",
-    "cost_notes": "Free parking, gas + tolls",
-    "highlights": "Highest peak in Catskills, panoramic views, old-growth forest",
+    "nearest_airport": "Stewart International Airport (SWF), 60 miles — or JFK/EWR. Within 2.5hr drive from NYC.",
+    "estimated_cost": "$10–$40",
+    "cost_breakdown": {
+      "Parking": "Free at the trailhead",
+      "Gas from NYC": "~$20–$30 round trip",
+      "Food": "Bring your own — limited options near trailhead; Woodstock and Phoenicia have restaurants"
+    },
+    "highlights": "Highest peak in the Catskills at 4,180 ft, old-growth balsam forest near the summit, peregrine falcon habitat, part of the Catskill 3500 peak-bagging list",
     "completed": false,
-    "notes": ""
+    "notes": "",
+    "trails": [
+      {
+        "name": "Slide Mountain via Curtis-Ormsbee Trail",
+        "miles": 5.4,
+        "elevation_gain_ft": 1620,
+        "difficulty": "moderate",
+        "description": "The most popular and direct route to the summit. Steady climb through hardwood and then balsam forest. Summit has a partial view and John Burroughs plaque. Out-and-back."
+      },
+      {
+        "name": "Slide–Cornell–Wittenberg Traverse",
+        "miles": 9.5,
+        "elevation_gain_ft": 2800,
+        "difficulty": "hard",
+        "description": "A classic Catskills ridge walk hitting three 3500+ ft peaks. Requires a car shuttle between trailheads. Full-day adventure with great views from Wittenberg summit."
+      }
+    ]
   },
   {
     "id": 5,
@@ -82,111 +244,295 @@
     "state": "New York",
     "lat": 41.4423,
     "lng": -73.9845,
-    "difficulty": "hard",
-    "best_seasons": ["March", "April", "May", "October", "November"],
+    "difficulty_range": "Hard",
+    "best_seasons": ["March", "April", "October", "November"],
+    "best_season_notes": "Spring and fall are ideal — cooler temps make the steep scramble manageable and crowds are lighter. Avoid summer weekends when the trail becomes dangerously overcrowded.",
+    "busiest_times": ["Spring weekends", "October weekends"],
+    "busiest_notes": "One of the most visited hikes in the entire country due to Metro-North access. Spring and fall weekends see thousands of people — the trail becomes a traffic jam. Go on a weekday or arrive before 8am.",
+    "annual_closures": "No formal closures. Trail can be very icy December–February — microspikes essential. Some ledges close temporarily after rock falls (check NY-NJ Trail Conference website).",
     "distance_from_nyc_miles": 60,
     "drive_hours": 1.25,
-    "trail_miles": 4.5,
-    "elevation_gain_ft": 1400,
-    "estimated_cost": "$20-40",
-    "cost_notes": "Metro-North train from NYC ~$20 roundtrip, no car needed",
-    "highlights": "Scrambling, Hudson River views, accessible by train",
+    "nearest_airport": "Stewart International Airport (SWF), 25 miles. Within 1.25hr drive from NYC.",
+    "estimated_cost": "$20–$45",
+    "cost_breakdown": {
+      "Metro-North Train": "~$20–$25 roundtrip from Grand Central (Hudson Line to Breakneck Ridge stop — seasonal stop, check schedule)",
+      "Parking": "$10 at Cold Spring lots if driving",
+      "Gas from NYC": "~$12–$18 round trip if driving",
+      "Food": "Cold Spring village has cafes and restaurants — a great post-hike stop"
+    },
+    "highlights": "Hudson River views from exposed granite ledges, hands-on scrambling, accessible by train directly to the trailhead, connects to Cold Spring village",
     "completed": false,
-    "notes": ""
+    "notes": "",
+    "trails": [
+      {
+        "name": "Breakneck Ridge Loop (standard)",
+        "miles": 4.5,
+        "elevation_gain_ft": 1400,
+        "difficulty": "hard",
+        "description": "Climb the exposed white-blazed scramble trail up the ridge with Hudson River views throughout, then descend on the yellow-blazed Wilkinson Memorial Trail. Loop back along the road or river trail."
+      },
+      {
+        "name": "Breakneck Ridge to Bull Hill",
+        "miles": 8.5,
+        "elevation_gain_ft": 2200,
+        "difficulty": "hard",
+        "description": "Extension of the standard loop up to Bull Hill (Mt. Taurus) for even broader Hudson Valley views. Descend into Cold Spring and catch the train back — a classic point-to-point."
+      }
+    ]
   },
   {
     "id": 6,
-    "name": "Bear Mountain State Park — Perkins Memorial",
+    "name": "Bear Mountain State Park",
     "type": "day_hike",
     "state": "New York",
     "lat": 41.3126,
     "lng": -74.0015,
-    "difficulty": "easy",
-    "best_seasons": ["March", "April", "May", "October", "November"],
+    "difficulty_range": "Easy to Moderate",
+    "best_seasons": ["March", "April", "October", "November"],
+    "best_season_notes": "Spring and fall are best — good views before and after leaf-on season. Summers are hot and the park gets very crowded. Winter hiking is possible with microspikes.",
+    "busiest_times": ["Summer weekends", "October weekends"],
+    "busiest_notes": "Bear Mountain is one of the most visited state parks in the US. Summer weekends are extremely crowded — the parking lots overflow by 10am. Weekdays are dramatically quieter.",
+    "annual_closures": "Park is open year-round. Some picnic areas and facilities close October–April. The Appalachian Trail crossing remains open all year.",
     "distance_from_nyc_miles": 50,
     "drive_hours": 1.0,
-    "trail_miles": 4.2,
-    "elevation_gain_ft": 1200,
-    "estimated_cost": "$10-25",
-    "cost_notes": "Free parking, Appalachian Trail access",
-    "highlights": "Perkins Memorial Tower, Appalachian Trail crossing, fall foliage",
+    "nearest_airport": "Stewart International Airport (SWF), 25 miles — or Newark (EWR). Within 1hr drive from NYC.",
+    "estimated_cost": "$10–$25",
+    "cost_breakdown": {
+      "Parking": "$10/vehicle on weekends (seasonal)",
+      "Gas from NYC": "~$10–$15 round trip",
+      "Food": "Hessian Lake snack bar and Bear Mountain Inn restaurant on site"
+    },
+    "highlights": "Perkins Memorial Tower with 360° views, AT crossing at the lowest elevation point on the entire trail, Hessian Lake, Bear Mountain Inn",
     "completed": false,
-    "notes": ""
+    "notes": "",
+    "trails": [
+      {
+        "name": "Perkins Memorial Drive / Tower Trail",
+        "miles": 3.0,
+        "elevation_gain_ft": 1100,
+        "difficulty": "moderate",
+        "description": "Hike or drive to Perkins Memorial Tower at the summit (1,283 ft). Several trail options (Major Welch Trail is the classic). 360° views over the Hudson Valley. The AT crosses the summit."
+      },
+      {
+        "name": "Appalachian Trail Day Section",
+        "miles": 4.2,
+        "elevation_gain_ft": 900,
+        "difficulty": "moderate",
+        "description": "Follow the AT through Bear Mountain — crosses the summit and descends to the Hudson River. Historically significant as the southernmost section of the AT built. Can connect to the Hudson River pedestrian bridge."
+      },
+      {
+        "name": "Dunderberg Spiral Railway Trail",
+        "miles": 6.5,
+        "elevation_gain_ft": 1200,
+        "difficulty": "moderate",
+        "description": "A quieter option in the southern part of the park. Follows the abandoned railway grade and offers good views of the Hudson Highlands. Much less crowded than the main summit trails."
+      }
+    ]
   },
   {
     "id": 7,
-    "name": "Adirondacks — Mount Marcy",
+    "name": "Adirondacks — High Peaks Region",
     "type": "day_hike",
     "state": "New York",
     "lat": 44.1128,
     "lng": -73.9237,
-    "difficulty": "hard",
+    "difficulty_range": "Moderate to Hard",
     "best_seasons": ["June", "July", "August", "September"],
+    "best_season_notes": "July and August are the most reliable weather-wise. September is stunning for fall color and fewer bugs. Avoid high peaks May–June — trails are muddy, snowpack may remain above 4000 ft, and black flies are brutal.",
+    "busiest_times": ["July 4th week", "Labor Day weekend", "August weekends"],
+    "busiest_notes": "The High Peaks see significant overcrowding in summer. The DEC now requires parking reservations for the Adirondack Loj trailhead (main access to Marcy) from mid-May through Columbus Day. Book well in advance.",
+    "annual_closures": "Trails above 2500 ft are closed to hiking from mud season (roughly April 15–May 15) to protect fragile vegetation. Check NYSDEC for exact dates each year. Winter access requires full mountaineering gear above treeline.",
     "distance_from_nyc_miles": 260,
     "drive_hours": 4.5,
-    "trail_miles": 14.8,
-    "elevation_gain_ft": 3166,
-    "estimated_cost": "$30-100",
-    "cost_notes": "Free parking at High Peaks trailhead, camping $15/night if overnight",
-    "highlights": "Highest peak in NY, alpine views, Lake Tear of the Clouds — Hudson River source",
+    "nearest_airport": "Albany International Airport (ALB), 100 miles — or Burlington (BTV), 70 miles. Within 4.5hr drive from NYC.",
+    "estimated_cost": "$30–$120",
+    "cost_breakdown": {
+      "Parking Reservation": "$10–$15 at Adirondack Loj (required in season — book at ReserveAmerica)",
+      "Camping": "$15–$22/night at Adirondack Loj campground or lean-tos on trail",
+      "Gas from NYC": "~$50–$70 round trip",
+      "Food": "Lake Placid (10 miles) has restaurants and grocery stores — stock up before heading to trailhead",
+      "Gear Note": "Navigation gear and layers essential — weather changes rapidly above treeline"
+    },
+    "highlights": "Mount Marcy (highest peak in NY at 5,344 ft), Lake Tear of the Clouds (Hudson River source), Algonquin Peak, alpine meadows above treeline, the famous 46 High Peaks peak-bagging list",
     "completed": false,
-    "notes": ""
+    "notes": "",
+    "trails": [
+      {
+        "name": "Mount Marcy via Van Hoevenberg Trail",
+        "miles": 14.8,
+        "elevation_gain_ft": 3166,
+        "difficulty": "hard",
+        "description": "The standard and most-traveled route to the highest point in New York. Long, sustained climb through boreal forest then above treeline. Full day — start by 6am. Lake Tear of the Clouds en route is a highlight."
+      },
+      {
+        "name": "Algonquin Peak",
+        "miles": 9.6,
+        "elevation_gain_ft": 2936,
+        "difficulty": "hard",
+        "description": "Second-highest peak in NY and arguably better views than Marcy (above treeline on all sides). Steep rocky scramble near the summit. Often combined with nearby Iroquois Peak."
+      },
+      {
+        "name": "Wright Peak",
+        "miles": 6.6,
+        "elevation_gain_ft": 2160,
+        "difficulty": "hard",
+        "description": "Shorter and slightly less demanding High Peak. Dramatic above-treeline terrain with views of Algonquin. Good intro to High Peaks hiking. Can be combined with Algonquin."
+      },
+      {
+        "name": "Cascade and Porter Mountains",
+        "miles": 4.8,
+        "elevation_gain_ft": 1940,
+        "difficulty": "moderate",
+        "description": "The easiest High Peaks — two peaks in one outing with a short but rocky trail. Cascade has the best views per mile of effort of any High Peak. Great introduction to above-treeline hiking in the Adirondacks."
+      }
+    ]
   },
   {
     "id": 8,
-    "name": "Appalachian Trail — High Point NJ",
+    "name": "High Point State Park — NJ AT Section",
     "type": "day_hike",
     "state": "New Jersey",
     "lat": 41.3198,
     "lng": -74.6607,
-    "difficulty": "easy",
+    "difficulty_range": "Easy to Moderate",
     "best_seasons": ["April", "May", "June", "September", "October"],
+    "best_season_notes": "Spring and fall are most comfortable. Summer can be hot and buggy. Good winter hiking destination when snowpack is light — views are better with bare trees.",
+    "busiest_times": ["Summer weekends", "October weekends"],
+    "busiest_notes": "Busy on summer weekends but never overcrowded compared to Hudson Valley options. The monument area can be crowded; trails are generally quiet.",
+    "annual_closures": "Monument area and some facilities close November–April. The AT and most trails remain open year-round. Swimming lake is seasonal (Memorial Day–Labor Day).",
     "distance_from_nyc_miles": 80,
     "drive_hours": 1.75,
-    "trail_miles": 6.0,
-    "elevation_gain_ft": 600,
-    "estimated_cost": "$15-30",
-    "cost_notes": "$10 NJ State Park fee, gas + tolls",
-    "highlights": "Highest point in NJ, AT section, monument views into 3 states",
+    "nearest_airport": "Newark Liberty International Airport (EWR), 75 miles. Within 1.75hr drive from NYC.",
+    "estimated_cost": "$15–$35",
+    "cost_breakdown": {
+      "Park Entrance": "$10–$20/vehicle (seasonal, weekends only in summer)",
+      "Gas from NYC": "~$15–$20 round trip",
+      "Food": "Bring your own — no food services in park. Sussex County towns nearby."
+    },
+    "highlights": "Highest point in New Jersey (1,803 ft), views into three states (NJ, NY, PA), Appalachian Trail crossing, High Point Monument (similar to Washington Monument)",
     "completed": false,
-    "notes": ""
+    "notes": "",
+    "trails": [
+      {
+        "name": "Monument Trail to High Point Summit",
+        "miles": 2.5,
+        "elevation_gain_ft": 400,
+        "difficulty": "easy",
+        "description": "Short walk from the parking area to the High Point Monument at the summit of NJ. Easy terrain, paved in sections. Excellent views on clear days into three states."
+      },
+      {
+        "name": "Appalachian Trail Traverse — High Point",
+        "miles": 6.0,
+        "elevation_gain_ft": 600,
+        "difficulty": "moderate",
+        "description": "Follow the AT through the park along the ridge. Views across the Kittatinny Ridge and into the Delaware River valley. Peaceful and well-maintained. Good for a longer half-day."
+      }
+    ]
   },
   {
     "id": 9,
-    "name": "Harriman State Park — Ramapo-Dunderberg Trail",
+    "name": "Harriman State Park",
     "type": "day_hike",
     "state": "New York",
     "lat": 41.2390,
     "lng": -74.0951,
-    "difficulty": "moderate",
+    "difficulty_range": "Easy to Hard",
     "best_seasons": ["April", "May", "October", "November"],
+    "best_season_notes": "Fall is stunning for foliage and cool ridgeline hiking. Spring has wildflowers and good views before leaf-out. Summer is fine but hot — start early. Winter hiking is excellent with microspikes.",
+    "busiest_times": ["October weekends", "summer weekends"],
+    "busiest_notes": "Closer trailheads (near Tuxedo and Route 106) get crowded on weekends. The park is 47,000 acres — venture to the northern or western sections for solitude even on busy days.",
+    "annual_closures": "Open year-round. No formal seasonal closures. Some forest roads close in winter.",
     "distance_from_nyc_miles": 45,
     "drive_hours": 1.0,
-    "trail_miles": 23.0,
-    "elevation_gain_ft": 3500,
-    "estimated_cost": "$10-20",
-    "cost_notes": "Free parking, no entrance fee",
-    "highlights": "Extensive trail network, lakes, rocky ridges, solitude close to NYC",
+    "nearest_airport": "Newark Liberty International Airport (EWR), 50 miles — or Stewart (SWF). Within 1hr drive from NYC.",
+    "estimated_cost": "$10–$25",
+    "cost_breakdown": {
+      "Parking": "$10–$15 at main lots; many trailheads are free",
+      "Gas from NYC": "~$10–$15 round trip",
+      "Food": "No services inside the park — Tuxedo, Sloatsburg, and Suffern have options"
+    },
+    "highlights": "200+ miles of trails, glacial lakes (Lake Tiorati, Lake Sebago), rocky ridgelines, ruins and WWII-era trails, very close to NYC",
     "completed": false,
-    "notes": ""
+    "notes": "",
+    "trails": [
+      {
+        "name": "Pine Meadow Lake Loop",
+        "miles": 7.5,
+        "elevation_gain_ft": 900,
+        "difficulty": "moderate",
+        "description": "A classic Harriman loop through forest to a beautiful backcountry lake. Good for a half-day with a lunch stop at the lake. Relatively gentle terrain."
+      },
+      {
+        "name": "Ramapo-Dunderberg Trail Traverse",
+        "miles": 23.0,
+        "elevation_gain_ft": 3500,
+        "difficulty": "hard",
+        "description": "The longest single trail in Harriman — a full ridge traverse usually done over 2 days with camping. Multiple rocky summits and lake views. Requires car shuttle or overnight camping permit."
+      },
+      {
+        "name": "Black Rock Mountain",
+        "miles": 5.5,
+        "elevation_gain_ft": 1100,
+        "difficulty": "moderate",
+        "description": "Rocky summit with great views toward the Hudson Highlands. Less crowded than the southern sections. Good trail variety — rocky scrambles and open ridge walking."
+      },
+      {
+        "name": "Lemon Squeezer — Island Pond",
+        "miles": 8.0,
+        "elevation_gain_ft": 1500,
+        "difficulty": "moderate",
+        "description": "A Harriman classic featuring the Lemon Squeezer (a slot canyon squeeze through boulders) and the serene Island Pond. Rocky and varied terrain throughout. Very popular but earns it."
+      }
+    ]
   },
   {
     "id": 10,
-    "name": "Pocono Mountains — Bushkill Falls",
+    "name": "Pocono Mountains — Bushkill Falls Area",
     "type": "day_hike",
     "state": "Pennsylvania",
     "lat": 41.0620,
     "lng": -75.0019,
-    "difficulty": "easy",
+    "difficulty_range": "Easy to Moderate",
     "best_seasons": ["May", "June", "September", "October"],
+    "best_season_notes": "Late May and June for waterfalls at full flow. October for foliage around the falls. Summer works but gets crowded. Spring snowmelt (March–April) produces the most dramatic falls but trails can be muddy.",
+    "busiest_times": ["July", "August", "October weekends"],
+    "busiest_notes": "Bushkill Falls is a commercial attraction and can feel crowded July–August. The surrounding Delaware State Forest trails are much quieter. Arrive at opening (9am) on busy days.",
+    "annual_closures": "Bushkill Falls private attraction is open April–November only (closes for winter). Delaware State Forest public trails are open year-round.",
     "distance_from_nyc_miles": 90,
     "drive_hours": 2.0,
-    "trail_miles": 3.0,
-    "elevation_gain_ft": 300,
-    "estimated_cost": "$25-45",
-    "cost_notes": "$23 admission to falls, family-friendly",
-    "highlights": "Niagara of Pennsylvania, 8 waterfalls, lush gorge trails",
+    "nearest_airport": "Newark Liberty International Airport (EWR), 85 miles. Within 2hr drive from NYC.",
+    "estimated_cost": "$20–$55",
+    "cost_breakdown": {
+      "Bushkill Falls Admission": "$23/adult, $20/senior, $12/child (private attraction — worth it for the main falls)",
+      "Delaware State Forest Trails": "Free",
+      "Gas from NYC": "~$18–$25 round trip",
+      "Food": "Snack bar at Bushkill Falls; Milford, PA (15 min away) has excellent restaurants"
+    },
+    "highlights": "Main Bushkill Falls (100 ft drop — Niagara of Pennsylvania), 8 total waterfalls, Milford PA town for post-hike dining, Delaware Water Gap nearby for a combined trip",
     "completed": false,
-    "notes": ""
+    "notes": "",
+    "trails": [
+      {
+        "name": "Bushkill Falls — Green Trail (Main Falls)",
+        "miles": 0.5,
+        "elevation_gain_ft": 50,
+        "difficulty": "easy",
+        "description": "Boardwalk trail to the main Bushkill Falls — a dramatic 100-ft drop. Paved and accessible. Good for all ages. Admission charged."
+      },
+      {
+        "name": "Bushkill Falls — Red Trail (All 8 Falls)",
+        "miles": 2.0,
+        "elevation_gain_ft": 300,
+        "difficulty": "moderate",
+        "description": "The full falls circuit visiting all 8 waterfalls. Some steep wooden staircases and uneven terrain. Takes about 90 minutes. The best way to experience the full area."
+      },
+      {
+        "name": "Dingmans Creek Trail (Delaware State Forest)",
+        "miles": 3.5,
+        "elevation_gain_ft": 200,
+        "difficulty": "easy",
+        "description": "Free public trail along Dingmans Creek near the Delaware River. Leads to smaller but beautiful free cascades. Much less crowded than Bushkill. Good complement to the main falls visit."
+      }
+    ]
   }
 ]

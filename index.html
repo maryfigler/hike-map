@@ -19,333 +19,225 @@
 
     header {
       background: #2d5a27;
-      padding: 12px 20px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
       z-index: 1000;
     }
 
-    header h1 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #c8e6c9;
-      white-space: nowrap;
-    }
+    header h1 { font-size: 1.2rem; font-weight: 700; color: #c8e6c9; white-space: nowrap; }
 
-    .filters {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      flex: 1;
-    }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; align-items: center; }
 
     select, button.filter-btn {
-      background: #1e3d1b;
-      color: #c8e6c9;
-      border: 1px solid #4a7c44;
-      border-radius: 6px;
-      padding: 6px 12px;
-      font-size: 0.85rem;
-      cursor: pointer;
+      background: #1e3d1b; color: #c8e6c9;
+      border: 1px solid #4a7c44; border-radius: 6px;
+      padding: 6px 11px; font-size: 0.82rem; cursor: pointer;
     }
-
     select:focus { outline: none; border-color: #81c784; }
-
-    button.filter-btn {
-      transition: background 0.2s;
-    }
+    button.filter-btn { transition: background 0.2s; }
     button.filter-btn:hover { background: #2d5a27; }
     button.filter-btn.active { background: #4a7c44; }
 
-    .stats {
-      font-size: 0.8rem;
-      color: #a5d6a7;
+    /* Difficulty legend button */
+    #legend-btn {
+      background: #1e3d1b; color: #c8e6c9;
+      border: 1px solid #4a7c44; border-radius: 6px;
+      padding: 6px 11px; font-size: 0.82rem; cursor: pointer;
       white-space: nowrap;
     }
+    #legend-btn:hover { background: #2d5a27; }
 
-    .main {
-      display: flex;
-      flex: 1;
-      overflow: hidden;
-    }
+    .stats { font-size: 0.78rem; color: #a5d6a7; white-space: nowrap; }
 
-    #map {
-      flex: 1;
-      z-index: 1;
-    }
+    .main { display: flex; flex: 1; overflow: hidden; }
+
+    #map { flex: 1; z-index: 1; }
 
     #sidebar {
-      width: 340px;
-      background: #242424;
-      overflow-y: auto;
-      border-left: 1px solid #333;
-      display: flex;
-      flex-direction: column;
+      width: 340px; background: #242424;
+      overflow-y: auto; border-left: 1px solid #333;
+      display: flex; flex-direction: column;
     }
 
     #sidebar-header {
       padding: 12px 16px 10px;
       border-bottom: 1px solid #333;
-      font-size: 0.9rem;
-      color: #aaa;
-      position: sticky;
-      top: 0;
-      background: #242424;
-      z-index: 10;
+      position: sticky; top: 0; background: #242424; z-index: 10;
     }
 
-    .search-wrap {
-      position: relative;
-      margin-bottom: 8px;
-    }
+    .search-wrap { position: relative; margin-bottom: 8px; }
 
     #search-input {
-      width: 100%;
-      background: #1a1a1a;
-      color: #f0f0f0;
-      border: 1px solid #3a3a3a;
-      border-radius: 8px;
-      padding: 8px 32px 8px 34px;
-      font-size: 0.88rem;
-      outline: none;
-      transition: border-color 0.2s;
+      width: 100%; background: #1a1a1a; color: #f0f0f0;
+      border: 1px solid #3a3a3a; border-radius: 8px;
+      padding: 8px 32px 8px 34px; font-size: 0.87rem;
+      outline: none; transition: border-color 0.2s;
     }
     #search-input:focus { border-color: #66bb6a; }
     #search-input::placeholder { color: #555; }
 
     .search-icon {
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #555;
-      font-size: 0.9rem;
-      pointer-events: none;
+      position: absolute; left: 10px; top: 50%;
+      transform: translateY(-50%); color: #555; font-size: 0.88rem; pointer-events: none;
     }
 
     #search-clear {
-      position: absolute;
-      right: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: #555;
-      font-size: 1rem;
-      cursor: pointer;
-      line-height: 1;
-      display: none;
-      padding: 2px 4px;
+      position: absolute; right: 8px; top: 50%;
+      transform: translateY(-50%); background: none; border: none;
+      color: #555; font-size: 1rem; cursor: pointer; display: none; padding: 2px 4px;
     }
     #search-clear:hover { color: #aaa; }
 
-    .list-count-row {
-      font-size: 0.78rem;
-      color: #555;
-    }
+    .list-count-row { font-size: 0.76rem; color: #555; }
 
-    #hike-list {
-      flex: 1;
-    }
-
+    /* Hike cards */
     .hike-card {
-      padding: 14px 16px;
-      border-bottom: 1px solid #2e2e2e;
-      cursor: pointer;
-      transition: background 0.15s;
+      padding: 13px 16px; border-bottom: 1px solid #2e2e2e;
+      cursor: pointer; transition: background 0.15s;
     }
     .hike-card:hover { background: #2c2c2c; }
     .hike-card.active { background: #1e3d1b; border-left: 3px solid #66bb6a; }
 
-    .card-top {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-
-    .hike-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      flex: 1;
-      line-height: 1.3;
-    }
+    .card-top { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
+    .hike-name { font-size: 0.93rem; font-weight: 600; flex: 1; line-height: 1.3; }
 
     .badge {
-      font-size: 0.65rem;
-      font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 12px;
-      white-space: nowrap;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+      font-size: 0.63rem; font-weight: 700; padding: 2px 7px;
+      border-radius: 12px; white-space: nowrap;
+      text-transform: uppercase; letter-spacing: 0.04em;
     }
-
     .badge-easy { background: #1b5e20; color: #a5d6a7; }
     .badge-moderate { background: #e65100; color: #ffe0b2; }
     .badge-hard { background: #7f0000; color: #ef9a9a; }
+    .badge-range { background: #37474f; color: #b0bec5; }
     .badge-np { background: #1a237e; color: #c5cae9; }
 
-    .card-meta {
-      font-size: 0.78rem;
-      color: #888;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
+    .card-meta { font-size: 0.77rem; color: #888; display: flex; gap: 12px; flex-wrap: wrap; }
     .card-meta span { display: flex; align-items: center; gap: 3px; }
 
     .completed-check {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      border: 2px solid #555;
-      flex-shrink: 0;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 2px;
-      transition: all 0.2s;
+      width: 18px; height: 18px; border-radius: 50%; border: 2px solid #555;
+      flex-shrink: 0; cursor: pointer; display: flex; align-items: center;
+      justify-content: center; margin-top: 2px; transition: all 0.2s;
     }
     .completed-check.done { background: #66bb6a; border-color: #66bb6a; }
     .completed-check.done::after { content: '✓'; font-size: 11px; color: #fff; font-weight: bold; }
 
-    /* Detail panel */
+    /* ===== Detail panel ===== */
     #detail-panel {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      width: 340px;
-      background: #1e1e1e;
-      border: 1px solid #3a3a3a;
-      border-radius: 12px;
-      padding: 18px;
-      z-index: 500;
+      position: absolute; bottom: 20px; left: 20px;
+      width: 400px; background: #1e1e1e;
+      border: 1px solid #3a3a3a; border-radius: 12px;
+      padding: 0; z-index: 500;
       box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-      display: none;
-      max-height: 70vh;
-      overflow-y: auto;
+      display: none; max-height: 80vh; overflow-y: auto;
     }
-
     #detail-panel.visible { display: block; }
 
+    .dp-inner { padding: 18px; }
+
     #detail-close {
-      float: right;
-      background: none;
-      border: none;
-      color: #aaa;
-      font-size: 1.2rem;
-      cursor: pointer;
-      margin-top: -4px;
+      float: right; background: none; border: none;
+      color: #aaa; font-size: 1.1rem; cursor: pointer; margin-top: -2px;
     }
     #detail-close:hover { color: #fff; }
 
-    .detail-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-      padding-right: 24px;
-    }
-
-    .detail-state {
-      font-size: 0.82rem;
-      color: #888;
-      margin-bottom: 12px;
-    }
+    .detail-title { font-size: 1.1rem; font-weight: 700; padding-right: 24px; margin-bottom: 3px; }
+    .detail-sub { font-size: 0.8rem; color: #888; margin-bottom: 14px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 
     .detail-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 14px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 8px; margin-bottom: 14px;
     }
+    .detail-item { background: #2a2a2a; border-radius: 8px; padding: 9px 12px; }
+    .detail-item .label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: #666; margin-bottom: 3px; }
+    .detail-item .value { font-size: 0.92rem; font-weight: 600; color: #e0e0e0; }
 
-    .detail-item {
-      background: #2a2a2a;
-      border-radius: 8px;
-      padding: 10px 12px;
+    /* Expandable section */
+    .expand-section { border-top: 1px solid #2a2a2a; }
+
+    .expand-toggle {
+      width: 100%; text-align: left; background: none; border: none;
+      color: #aaa; padding: 11px 18px; font-size: 0.85rem; font-weight: 600;
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      transition: color 0.15s;
     }
+    .expand-toggle:hover { color: #f0f0f0; }
+    .expand-toggle .arrow { font-size: 0.75rem; transition: transform 0.2s; }
+    .expand-toggle.open .arrow { transform: rotate(180deg); }
 
-    .detail-item .label {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #666;
-      margin-bottom: 3px;
-    }
+    .expand-body { padding: 0 18px 14px; display: none; }
+    .expand-body.open { display: block; }
 
-    .detail-item .value {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #e0e0e0;
-    }
-
-    .detail-section {
-      margin-bottom: 12px;
-    }
-
+    .detail-section { margin-bottom: 12px; }
+    .detail-section:last-child { margin-bottom: 0; }
     .detail-section .label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #666;
-      margin-bottom: 4px;
+      font-size: 0.68rem; text-transform: uppercase;
+      letter-spacing: 0.06em; color: #666; margin-bottom: 4px;
     }
+    .detail-section .value { font-size: 0.86rem; color: #ccc; line-height: 1.55; }
 
-    .detail-section .value {
-      font-size: 0.88rem;
-      color: #ccc;
-      line-height: 1.5;
-    }
+    .seasons-list { display: flex; flex-wrap: wrap; gap: 5px; }
+    .season-tag { background: #2d5a27; color: #a5d6a7; font-size: 0.74rem; padding: 2px 9px; border-radius: 12px; }
+    .busy-tag { background: #4a1a00; color: #ffcc80; font-size: 0.74rem; padding: 2px 9px; border-radius: 12px; }
 
-    .seasons-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
+    /* Cost breakdown */
+    .cost-row { display: flex; justify-content: space-between; gap: 10px; padding: 6px 0; border-bottom: 1px solid #2a2a2a; font-size: 0.84rem; }
+    .cost-row:last-child { border-bottom: none; }
+    .cost-key { color: #888; flex: 1; }
+    .cost-val { color: #e0e0e0; font-weight: 500; text-align: right; flex: 1; }
 
-    .season-tag {
-      background: #2d5a27;
-      color: #a5d6a7;
-      font-size: 0.75rem;
-      padding: 2px 9px;
-      border-radius: 12px;
+    /* Trails list */
+    .trail-card {
+      background: #242424; border-radius: 8px;
+      padding: 11px 13px; margin-bottom: 8px;
     }
+    .trail-card:last-child { margin-bottom: 0; }
+    .trail-top { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 5px; }
+    .trail-name { font-size: 0.87rem; font-weight: 600; flex: 1; line-height: 1.3; color: #e0e0e0; }
+    .trail-meta { font-size: 0.76rem; color: #777; display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 5px; }
+    .trail-desc { font-size: 0.81rem; color: #999; line-height: 1.5; }
 
     .mark-done-btn {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 4px;
-      transition: all 0.2s;
+      width: 100%; padding: 10px; border-radius: 8px; border: none;
+      font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
     }
-    .mark-done-btn.not-done {
-      background: #2d5a27;
-      color: #c8e6c9;
-    }
+    .mark-done-btn.not-done { background: #2d5a27; color: #c8e6c9; }
     .mark-done-btn.not-done:hover { background: #4a7c44; }
-    .mark-done-btn.is-done {
-      background: #333;
-      color: #66bb6a;
-    }
+    .mark-done-btn.is-done { background: #333; color: #66bb6a; }
 
-    /* Leaflet popup override */
-    .leaflet-popup-content-wrapper {
-      background: #1e1e1e;
-      color: #f0f0f0;
-      border: 1px solid #333;
-      border-radius: 10px;
+    /* Legend modal */
+    #legend-modal {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+      z-index: 2000; display: none; align-items: center; justify-content: center;
     }
+    #legend-modal.visible { display: flex; }
+    .legend-box {
+      background: #1e1e1e; border: 1px solid #3a3a3a; border-radius: 12px;
+      padding: 24px; max-width: 420px; width: 90%;
+    }
+    .legend-box h2 { font-size: 1rem; margin-bottom: 16px; color: #e0e0e0; }
+    .legend-row { display: flex; gap: 12px; margin-bottom: 14px; }
+    .legend-row:last-of-type { margin-bottom: 20px; }
+    .legend-dot {
+      width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff;
+      flex-shrink: 0; margin-top: 3px;
+    }
+    .legend-text .lname { font-size: 0.9rem; font-weight: 600; margin-bottom: 2px; }
+    .legend-text .ldesc { font-size: 0.82rem; color: #999; line-height: 1.45; }
+    .legend-close {
+      width: 100%; padding: 10px; background: #2d5a27; color: #c8e6c9;
+      border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+    }
+    .legend-close:hover { background: #4a7c44; }
+
+    /* Leaflet popup */
+    .leaflet-popup-content-wrapper { background: #1e1e1e; color: #f0f0f0; border: 1px solid #333; border-radius: 10px; }
     .leaflet-popup-tip { background: #1e1e1e; }
-    .leaflet-popup-content { margin: 12px 16px; font-size: 0.85rem; }
+    .leaflet-popup-content { margin: 12px 16px; font-size: 0.84rem; line-height: 1.5; }
 
     @media (max-width: 700px) {
       #sidebar { display: none; }
@@ -376,6 +268,7 @@
       <option value="5">Under 5 hrs</option>
     </select>
     <button class="filter-btn" id="filter-completed">Show completed</button>
+    <button id="legend-btn">⬤ Difficulty guide</button>
   </div>
   <div class="stats" id="stats"></div>
 </header>
@@ -387,7 +280,7 @@
       <div class="search-wrap">
         <span class="search-icon">🔍</span>
         <input id="search-input" type="text" placeholder="Search by name, state, highlights…" autocomplete="off" />
-        <button id="search-clear" title="Clear search">✕</button>
+        <button id="search-clear" title="Clear">✕</button>
       </div>
       <div class="list-count-row"><span id="list-count"></span> hikes</div>
     </div>
@@ -395,53 +288,118 @@
   </div>
 </div>
 
+<!-- Detail panel -->
 <div id="detail-panel">
-  <button id="detail-close">✕</button>
-  <div class="detail-title" id="dp-name"></div>
-  <div class="detail-state" id="dp-state"></div>
-  <div class="detail-grid">
-    <div class="detail-item">
-      <div class="label">Difficulty</div>
-      <div class="value" id="dp-difficulty"></div>
+  <div class="dp-inner">
+    <button id="detail-close">✕</button>
+    <div class="detail-title" id="dp-name"></div>
+    <div class="detail-sub">
+      <span id="dp-state"></span>
+      <span id="dp-diff-badge"></span>
     </div>
-    <div class="detail-item">
-      <div class="label">Drive from NYC</div>
-      <div class="value" id="dp-drive"></div>
+    <div class="detail-grid">
+      <div class="detail-item">
+        <div class="label">Drive from NYC</div>
+        <div class="value" id="dp-drive"></div>
+      </div>
+      <div class="detail-item">
+        <div class="label">Distance</div>
+        <div class="value" id="dp-distance"></div>
+      </div>
+      <div class="detail-item">
+        <div class="label">Est. Cost</div>
+        <div class="value" id="dp-cost"></div>
+      </div>
+      <div class="detail-item">
+        <div class="label">Nearest Airport</div>
+        <div class="value" id="dp-airport" style="font-size:0.75rem; line-height:1.3;"></div>
+      </div>
     </div>
-    <div class="detail-item">
-      <div class="label">Trail Length</div>
-      <div class="value" id="dp-miles"></div>
+
+    <!-- Best seasons -->
+    <div class="detail-section">
+      <div class="label">Best Time to Go</div>
+      <div class="seasons-list" id="dp-seasons" style="margin-bottom:6px;"></div>
+      <div class="value" id="dp-season-notes" style="font-size:0.82rem; color:#999; line-height:1.5;"></div>
     </div>
-    <div class="detail-item">
-      <div class="label">Elevation Gain</div>
-      <div class="value" id="dp-elevation"></div>
+
+    <!-- Busiest times -->
+    <div class="detail-section">
+      <div class="label">Busiest Times</div>
+      <div class="seasons-list" id="dp-busy" style="margin-bottom:6px;"></div>
+      <div class="value" id="dp-busy-notes" style="font-size:0.82rem; color:#999; line-height:1.5;"></div>
     </div>
-    <div class="detail-item">
-      <div class="label">Distance</div>
-      <div class="value" id="dp-distance"></div>
+
+    <!-- Annual closures -->
+    <div class="detail-section">
+      <div class="label">Annual Closures</div>
+      <div class="value" id="dp-closures" style="font-size:0.84rem; color:#ccc; line-height:1.5;"></div>
     </div>
-    <div class="detail-item">
-      <div class="label">Est. Cost</div>
-      <div class="value" id="dp-cost"></div>
+
+    <!-- Highlights -->
+    <div class="detail-section">
+      <div class="label">Highlights</div>
+      <div class="value" id="dp-highlights" style="font-size:0.84rem;"></div>
     </div>
+
+    <button class="mark-done-btn" id="dp-done-btn" style="margin-bottom:4px;"></button>
   </div>
-  <div class="detail-section">
-    <div class="label">Cost Notes</div>
-    <div class="value" id="dp-cost-notes"></div>
+
+  <!-- Expandable: Trail Options -->
+  <div class="expand-section" id="trails-section">
+    <button class="expand-toggle" id="trails-toggle">
+      <span>Trail Options</span>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="expand-body" id="trails-body"></div>
   </div>
-  <div class="detail-section">
-    <div class="label">Best Seasons</div>
-    <div class="seasons-list" id="dp-seasons"></div>
+
+  <!-- Expandable: Cost Details -->
+  <div class="expand-section" id="cost-section">
+    <button class="expand-toggle" id="cost-toggle">
+      <span>Cost Breakdown</span>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="expand-body" id="cost-body"></div>
   </div>
-  <div class="detail-section">
-    <div class="label">Highlights</div>
-    <div class="value" id="dp-highlights"></div>
+
+  <!-- Expandable: Notes -->
+  <div class="expand-section" id="notes-section" style="display:none;">
+    <button class="expand-toggle" id="notes-toggle">
+      <span>My Notes</span>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="expand-body" id="notes-body"></div>
   </div>
-  <div class="detail-section" id="dp-notes-section" style="display:none">
-    <div class="label">Notes</div>
-    <div class="value" id="dp-notes"></div>
+</div>
+
+<!-- Difficulty legend modal -->
+<div id="legend-modal">
+  <div class="legend-box">
+    <h2>Difficulty Ratings</h2>
+    <div class="legend-row">
+      <div class="legend-dot" style="background:#66bb6a;"></div>
+      <div class="legend-text">
+        <div class="lname" style="color:#66bb6a;">Easy</div>
+        <div class="ldesc">Under 5 miles round trip · Under 500 ft elevation gain · Flat or gentle grades · Well-maintained, clearly marked trail · Suitable for most fitness levels and families</div>
+      </div>
+    </div>
+    <div class="legend-row">
+      <div class="legend-dot" style="background:#ffa726;"></div>
+      <div class="legend-text">
+        <div class="lname" style="color:#ffa726;">Moderate</div>
+        <div class="ldesc">5–10 miles · 500–2,000 ft elevation gain · Some steep or uneven sections · May have rocky terrain · Basic fitness required · Comfortable hiking footwear recommended</div>
+      </div>
+    </div>
+    <div class="legend-row">
+      <div class="legend-dot" style="background:#ef5350;"></div>
+      <div class="legend-text">
+        <div class="lname" style="color:#ef5350;">Hard</div>
+        <div class="ldesc">10+ miles OR 2,000+ ft elevation gain · Steep, rocky, or technical terrain · May involve scrambling or exposed ledges · Good physical fitness required · Hiking boots, navigation skills, and extra food/water essential</div>
+      </div>
+    </div>
+    <button class="legend-close" id="legend-close">Got it</button>
   </div>
-  <button class="mark-done-btn" id="dp-done-btn"></button>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -453,37 +411,33 @@
   let searchQuery = '';
 
   const map = L.map('map', { zoomControl: true }).setView([41.8, -73.5], 7);
-
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '© OpenStreetMap contributors © CARTO',
-    maxZoom: 18
+    attribution: '© OpenStreetMap contributors © CARTO', maxZoom: 18
   }).addTo(map);
 
   function difficultyColor(d) {
-    return d === 'easy' ? '#66bb6a' : d === 'moderate' ? '#ffa726' : '#ef5350';
+    const dl = (d || '').toLowerCase();
+    if (dl.includes('easy') && dl.includes('hard')) return '#a0a0a0';
+    if (dl.includes('easy') && dl.includes('moderate')) return '#ffa726';
+    if (dl.includes('moderate') && dl.includes('hard')) return '#ef5350';
+    if (dl === 'easy') return '#66bb6a';
+    if (dl === 'moderate') return '#ffa726';
+    if (dl === 'hard') return '#ef5350';
+    return '#9e9e9e';
   }
 
   function makeMarker(hike) {
-    const color = hike.completed ? '#9e9e9e' : difficultyColor(hike.difficulty);
+    const diff = (hike.difficulty_range || hike.difficulty || '').toLowerCase();
+    const color = hike.completed ? '#9e9e9e' : difficultyColor(diff);
     const isNP = hike.type === 'national_park';
-
+    const sz = isNP ? 18 : 14;
     const icon = L.divIcon({
       className: '',
-      html: `<div style="
-        width:${isNP ? 18 : 14}px;
-        height:${isNP ? 18 : 14}px;
-        border-radius:50%;
-        background:${color};
-        border:3px solid ${hike.completed ? '#555' : '#fff'};
-        box-shadow:0 2px 6px rgba(0,0,0,0.5);
-        opacity:${hike.completed ? 0.55 : 1};
-      "></div>`,
-      iconSize: [isNP ? 18 : 14, isNP ? 18 : 14],
-      iconAnchor: [isNP ? 9 : 7, isNP ? 9 : 7]
+      html: `<div style="width:${sz}px;height:${sz}px;border-radius:50%;background:${color};border:3px solid ${hike.completed ? '#555' : '#fff'};box-shadow:0 2px 6px rgba(0,0,0,0.5);opacity:${hike.completed ? 0.5 : 1};"></div>`,
+      iconSize: [sz, sz], iconAnchor: [sz/2, sz/2]
     });
-
     const m = L.marker([hike.lat, hike.lng], { icon });
-    m.bindPopup(`<strong>${hike.name}</strong><br>${hike.state}<br><em>${hike.difficulty}</em>`);
+    m.bindPopup(`<strong>${hike.name}</strong><br>${hike.state}<br><em>${hike.difficulty_range || hike.difficulty}</em><br>${hike.drive_hours}h from NYC`);
     m.on('click', () => showDetail(hike.id));
     return m;
   }
@@ -491,9 +445,7 @@
   function renderMarkers(filtered) {
     Object.values(markers).forEach(m => map.removeLayer(m));
     markers = {};
-    filtered.forEach(hike => {
-      markers[hike.id] = makeMarker(hike).addTo(map);
-    });
+    filtered.forEach(h => { markers[h.id] = makeMarker(h).addTo(map); });
   }
 
   function getFiltered() {
@@ -501,15 +453,19 @@
     const diff = document.getElementById('filter-difficulty').value;
     const drive = document.getElementById('filter-drive').value;
     const q = searchQuery.toLowerCase();
-
     return hikes.filter(h => {
       if (!showCompleted && h.completed) return false;
       if (type !== 'all' && h.type !== type) return false;
-      if (diff !== 'all' && h.difficulty !== diff) return false;
+      if (diff !== 'all') {
+        const dr = (h.difficulty_range || h.difficulty || '').toLowerCase();
+        if (!dr.includes(diff)) return false;
+      }
       if (drive !== 'all' && h.drive_hours > parseFloat(drive)) return false;
       if (q) {
-        const haystack = [h.name, h.state, h.highlights, h.difficulty, h.notes].join(' ').toLowerCase();
-        if (!haystack.includes(q)) return false;
+        const hay = [h.name, h.state, h.highlights, h.difficulty_range, h.notes,
+          (h.trails || []).map(t => t.name + ' ' + t.description).join(' ')
+        ].join(' ').toLowerCase();
+        if (!hay.includes(q)) return false;
       }
       return true;
     });
@@ -524,23 +480,27 @@
       const card = document.createElement('div');
       card.className = 'hike-card' + (hike.id === activeId ? ' active' : '');
       card.dataset.id = hike.id;
-
       const isNP = hike.type === 'national_park';
+      const diff = hike.difficulty_range || hike.difficulty || '';
+      const dlower = diff.toLowerCase();
+      const badgeClass = dlower.includes('to') ? 'badge-range' :
+        dlower === 'easy' ? 'badge-easy' : dlower === 'moderate' ? 'badge-moderate' : 'badge-hard';
+
       card.innerHTML = `
         <div class="card-top">
           <div class="completed-check ${hike.completed ? 'done' : ''}" data-id="${hike.id}" title="Mark complete"></div>
           <div class="hike-name">${hike.name}</div>
           ${isNP ? '<span class="badge badge-np">NP</span>' : ''}
-          <span class="badge badge-${hike.difficulty}">${hike.difficulty}</span>
+          <span class="badge ${badgeClass}">${diff}</span>
         </div>
         <div class="card-meta">
           <span>🚗 ${hike.drive_hours}h</span>
-          <span>📏 ${hike.trail_miles} mi</span>
+          ${hike.trails ? `<span>🥾 ${hike.trails.length} trails</span>` : `<span>📏 ${hike.trail_miles} mi</span>`}
           <span>💰 ${hike.estimated_cost}</span>
         </div>
       `;
 
-      card.addEventListener('click', (e) => {
+      card.addEventListener('click', e => {
         if (e.target.classList.contains('completed-check')) return;
         showDetail(hike.id);
         if (markers[hike.id]) {
@@ -548,7 +508,6 @@
           markers[hike.id].openPopup();
         }
       });
-
       card.querySelector('.completed-check').addEventListener('click', () => toggleComplete(hike.id));
       list.appendChild(card);
     });
@@ -559,11 +518,12 @@
     document.getElementById('stats').textContent = `${done} / ${hikes.length} completed`;
   }
 
-  function refresh() {
-    const filtered = getFiltered();
-    renderMarkers(filtered);
-    renderList(filtered);
-    updateStats();
+  function setExpand(toggleId, bodyId, open) {
+    const toggle = document.getElementById(toggleId);
+    const body = document.getElementById(bodyId);
+    if (!toggle || !body) return;
+    toggle.classList.toggle('open', open);
+    body.classList.toggle('open', open);
   }
 
   function showDetail(id) {
@@ -573,25 +533,79 @@
 
     document.getElementById('dp-name').textContent = hike.name;
     document.getElementById('dp-state').textContent = hike.state + (hike.type === 'national_park' ? ' · National Park' : '');
-    document.getElementById('dp-difficulty').textContent = hike.difficulty.charAt(0).toUpperCase() + hike.difficulty.slice(1);
+
+    const diff = hike.difficulty_range || hike.difficulty || '';
+    const dlower = diff.toLowerCase();
+    const badgeClass = dlower.includes('to') ? 'badge-range' :
+      dlower === 'easy' ? 'badge-easy' : dlower === 'moderate' ? 'badge-moderate' : 'badge-hard';
+    document.getElementById('dp-diff-badge').innerHTML = `<span class="badge ${badgeClass}">${diff}</span>`;
+
     document.getElementById('dp-drive').textContent = hike.drive_hours + ' hrs';
-    document.getElementById('dp-miles').textContent = hike.trail_miles + ' mi';
-    document.getElementById('dp-elevation').textContent = hike.elevation_gain_ft.toLocaleString() + ' ft';
     document.getElementById('dp-distance').textContent = hike.distance_from_nyc_miles + ' mi from NYC';
     document.getElementById('dp-cost').textContent = hike.estimated_cost;
-    document.getElementById('dp-cost-notes').textContent = hike.cost_notes;
-    document.getElementById('dp-highlights').textContent = hike.highlights;
+    document.getElementById('dp-airport').textContent = hike.nearest_airport || '—';
 
-    const seasons = document.getElementById('dp-seasons');
-    seasons.innerHTML = hike.best_seasons.map(s => `<span class="season-tag">${s}</span>`).join('');
+    // Best seasons
+    const seasonsEl = document.getElementById('dp-seasons');
+    seasonsEl.innerHTML = (hike.best_seasons || []).map(s => `<span class="season-tag">${s}</span>`).join('');
+    document.getElementById('dp-season-notes').textContent = hike.best_season_notes || '';
 
-    const notesSection = document.getElementById('dp-notes-section');
+    // Busiest times
+    const busyEl = document.getElementById('dp-busy');
+    busyEl.innerHTML = (hike.busiest_times || []).map(s => `<span class="busy-tag">${s}</span>`).join('');
+    document.getElementById('dp-busy-notes').textContent = hike.busiest_notes || '';
+
+    document.getElementById('dp-closures').textContent = hike.annual_closures || 'None noted.';
+    document.getElementById('dp-highlights').textContent = hike.highlights || '';
+
+    // Trails
+    const trailsSection = document.getElementById('trails-section');
+    const trailsBody = document.getElementById('trails-body');
+    if (hike.trails && hike.trails.length) {
+      trailsSection.style.display = 'block';
+      document.querySelector('#trails-toggle span:first-child').textContent = `Trail Options (${hike.trails.length})`;
+      trailsBody.innerHTML = hike.trails.map(t => {
+        const tc = t.difficulty === 'easy' ? '#66bb6a' : t.difficulty === 'moderate' ? '#ffa726' : '#ef5350';
+        return `<div class="trail-card">
+          <div class="trail-top">
+            <div class="trail-name">${t.name}</div>
+            <span class="badge badge-${t.difficulty}">${t.difficulty}</span>
+          </div>
+          <div class="trail-meta">
+            <span>📏 ${t.miles} mi</span>
+            <span>⬆️ ${t.elevation_gain_ft.toLocaleString()} ft gain</span>
+          </div>
+          <div class="trail-desc">${t.description}</div>
+        </div>`;
+      }).join('');
+    } else {
+      trailsSection.style.display = 'none';
+    }
+
+    // Cost breakdown
+    const costBody = document.getElementById('cost-body');
+    if (hike.cost_breakdown) {
+      costBody.innerHTML = Object.entries(hike.cost_breakdown).map(([k, v]) =>
+        `<div class="cost-row"><span class="cost-key">${k}</span><span class="cost-val">${v}</span></div>`
+      ).join('');
+      document.getElementById('cost-section').style.display = 'block';
+    } else {
+      document.getElementById('cost-section').style.display = 'none';
+    }
+
+    // Notes
+    const notesSection = document.getElementById('notes-section');
     if (hike.notes) {
       notesSection.style.display = 'block';
-      document.getElementById('dp-notes').textContent = hike.notes;
+      document.getElementById('notes-body').textContent = hike.notes;
     } else {
       notesSection.style.display = 'none';
     }
+
+    // Reset expand states
+    setExpand('trails-toggle', 'trails-body', false);
+    setExpand('cost-toggle', 'cost-body', false);
+    setExpand('notes-toggle', 'notes-body', false);
 
     const btn = document.getElementById('dp-done-btn');
     btn.textContent = hike.completed ? '✓ Completed!' : 'Mark as Completed';
@@ -599,7 +613,6 @@
     btn.onclick = () => toggleComplete(id);
 
     document.getElementById('detail-panel').classList.add('visible');
-
     document.querySelectorAll('.hike-card').forEach(c => {
       c.classList.toggle('active', parseInt(c.dataset.id) === id);
     });
@@ -612,6 +625,22 @@
     refresh();
     if (activeId === id) showDetail(id);
   }
+
+  function refresh() {
+    const filtered = getFiltered();
+    renderMarkers(filtered);
+    renderList(filtered);
+    updateStats();
+  }
+
+  // Expand toggles
+  ['trails', 'cost', 'notes'].forEach(key => {
+    const toggle = document.getElementById(`${key}-toggle`);
+    if (toggle) toggle.addEventListener('click', () => {
+      const isOpen = toggle.classList.contains('open');
+      setExpand(`${key}-toggle`, `${key}-body`, !isOpen);
+    });
+  });
 
   document.getElementById('detail-close').addEventListener('click', () => {
     document.getElementById('detail-panel').classList.remove('visible');
@@ -632,45 +661,43 @@
 
   const searchInput = document.getElementById('search-input');
   const searchClear = document.getElementById('search-clear');
-
   searchInput.addEventListener('input', () => {
     searchQuery = searchInput.value.trim();
     searchClear.style.display = searchQuery ? 'block' : 'none';
     refresh();
   });
-
   searchClear.addEventListener('click', () => {
-    searchInput.value = '';
-    searchQuery = '';
+    searchInput.value = ''; searchQuery = '';
     searchClear.style.display = 'none';
-    searchInput.focus();
-    refresh();
+    searchInput.focus(); refresh();
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === '/' && document.activeElement !== searchInput) {
-      e.preventDefault();
-      searchInput.focus();
-      searchInput.select();
-    }
+  document.getElementById('legend-btn').addEventListener('click', () => {
+    document.getElementById('legend-modal').classList.add('visible');
+  });
+  document.getElementById('legend-close').addEventListener('click', () => {
+    document.getElementById('legend-modal').classList.remove('visible');
+  });
+  document.getElementById('legend-modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('legend-modal'))
+      document.getElementById('legend-modal').classList.remove('visible');
+  });
+
+  document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
-      if (document.activeElement === searchInput) {
-        searchInput.blur();
-      } else {
-        document.getElementById('detail-close').click();
-      }
+      document.getElementById('legend-modal').classList.remove('visible');
+      if (document.activeElement === searchInput) { searchInput.blur(); }
+      else { document.getElementById('detail-close').click(); }
+    }
+    if (e.key === '/' && document.activeElement !== searchInput) {
+      e.preventDefault(); searchInput.focus(); searchInput.select();
     }
   });
 
   fetch('hikes.json')
     .then(r => r.json())
-    .then(data => {
-      hikes = data;
-      refresh();
-    })
-    .catch(() => {
-      document.getElementById('sidebar-header').textContent = 'Could not load hikes.json';
-    });
+    .then(data => { hikes = data; refresh(); })
+    .catch(() => { document.getElementById('sidebar-header').textContent = 'Could not load hikes.json'; });
 </script>
 </body>
 </html>
